@@ -26,10 +26,6 @@ Open [http://localhost:8000](http://localhost:8000) to test.
 Add a `.env` file to the root folder of this project.
 A sample `.env_sample` has been included
 
-PORT=8000
-DATABASE_URL=mongodb://localhost:27017/wefunder
-SESSION_SECRET=<`YOUR_CHOICE`>
-
 You can point to a different mongodb of your choosing otherwise use a local installed.
 
 It is assumed this dashboard and the API will be run and tested on the same local machine.
