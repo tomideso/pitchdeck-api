@@ -47,9 +47,8 @@ export default () => {
       await PitchDeckService.savePdfFile(files.file);
       await PitchDeckService.convertPdfToImages(files.file);
 
-      // const pitchDeck = await PitchDeckService.addPitchDeck(req.body);
-      // res.send(pitchDeck);
-      res.send("fdjhj");
+      const pitchDeck = await PitchDeckService.addPitchDeck(req.body);
+      res.send(pitchDeck);
     } catch (error) {
       console.log(error);
       const err = new AppError("Error saving PitchDeck", 400);

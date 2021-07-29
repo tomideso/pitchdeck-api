@@ -77,7 +77,7 @@ export class PitchDeckServiceImpl implements PitchDeckService {
         const filename = `${file.name}-${output.page}.png`;
         try {
           await writeFileSync(
-            ` ${this.publicDir}/images/${filename}`,
+            `${this.publicDir}/images/${filename}`,
             output.base64,
             "base64"
           );
