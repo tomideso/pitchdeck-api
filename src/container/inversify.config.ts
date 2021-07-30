@@ -4,7 +4,7 @@ import TYPES from "@/config/types";
 import {
   PitchDeckService,
   PitchDeckServiceImpl,
-} from "@/services/PitchDeckService";
+} from "@/Services/PitchDeckService";
 
 const container = new Container();
 
