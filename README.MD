@@ -10,9 +10,11 @@ To install the needed dependencies, you can run:
 
 ### Additional dependency
 
-This project depends on `GraphicsMagick`, Install `GraphicsMagick` using:
+This project depends on `GraphicsMagick` and `ImageMagick`, Install `GraphicsMagick` and `ImageMagick` using:
 
 #### `sudo apt-get install graphicsmagick`
+
+#### `sudo apt-get install imagemagick`
 
 In the project directory, you can run:
 
