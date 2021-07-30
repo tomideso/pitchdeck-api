@@ -46,7 +46,7 @@ export class PitchDeckServiceImpl implements PitchDeckService {
   public async getPitchDeckAndUpdate(cond, update) {
     return PitchDeck.findOneAndUpdate(cond, update, { new: true });
   }
-
+  //
   public async savePdfFile(file: pitchFile) {
     const pitchDeckFile = file;
     const uploadPath = this.publicDir + "/pdf/" + pitchDeckFile.name;
