@@ -20,10 +20,10 @@ export class PitchDeckServiceImpl implements PitchDeckService {
 
   public async addPitchDeck({
     fileUrl,
+    imageUrl = [],
     title,
     description,
     company,
-    highlight = [],
   }) {
     try {
       const pitchDeck = new PitchDeck();
@@ -32,8 +32,9 @@ export class PitchDeckServiceImpl implements PitchDeckService {
         title,
         description,
         company,
-        highlight,
+        imageUrl,
       });
+      return pitchDeck.save();
     } catch (error) {
       throw new AppError(error, 400);
     }
@@ -81,14 +82,13 @@ export class PitchDeckServiceImpl implements PitchDeckService {
             output.base64,
             "base64"
           );
-          filenames.push(filename);
-          return filename;
+          filenames.push(`/images/${filename}`);
         } catch (e) {
           console.log(e);
         }
       });
 
-      return await Promise.all(filenames);
+      return filenames;
     });
   }
 }
@@ -97,13 +97,14 @@ export interface PitchDeckService {
   getPitchDeckAndUpdate(cond, update);
   getAllPitchDeck();
   getPitchDeckById(id: string);
-  addPitchDeck(config: pitch, file);
+  addPitchDeck(config: pitch);
   convertPdfToImages(pdfFile);
   savePdfFile(files): Promise<string>;
 }
 
 interface pitch {
   fileUrl: string;
+  imageUrl: Array<string>;
   title: string;
   description: string;
   company: string;
