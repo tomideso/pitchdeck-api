@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response, Router } from "express";
-import { PitchDeckServiceImpl } from "@/services/PitchDeckService";
+import { PitchDeckServiceImpl } from "@/Services/PitchDeckService";
 import TYPES from "@/config/types";
 
 import container from "@/container/inversify.config";
